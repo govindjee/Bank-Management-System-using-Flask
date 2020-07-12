@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            .code
+            {
+                background-color:rgba(10, 142, 230, 0.842);
+                width: 100%;
+            }
+            .dashboard
+            {
+                width: 100%;
+                height:100px;
+                background: #63cdda;
+                top:0px;
+            }
+            .dashboard h1
+            {
+                font-size:25px;
+                
+               
+            }
+            .login
+            {
+            width:auto;
+            display: flex;
+            align-items:center;
+            position: absolute;
+            justify-content:center;
+            align-self: center;
+            align-content: center;
+            border:2px solid  black;
+            padding: 20px;
+            left: 500px;
+            top:200px;
+           
+            
+            }
+            #nav
+            {
+               margin-left: 450px;
+               
+               width:auto;
+
+            }
+            #nav div
+            {
+                
+               padding: 20px;
+              
+
+            }
+            #btn
+            {
+                background:rgba(10, 142, 230, 0.842);
+            }
+            #nav div div{
+                background-color:rgba(10, 142, 230, 0.842);
+            }
+             #log 
+            {
+                font-size: 30px;
+            }
+            #get {
+              position: absolute;
+             left: 500px;
+              top: 80px;
+             }
+             .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+             .sucess {
+  padding: 20px;
+  background-color:green;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: #ccc;
+}
+#add
+{
+   position: absolute;
+   right:20px;
+   top:230px;
+}
+table { width: 70%; }
+        table, th, td { border: solid 1px #DDD;
+            border-collapse: collapse; padding: 2px 3px; text-align: center;
+        }
+        </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="{{url_for('static', filename='cities.js')}}"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}"></script>
+  
+  
+    </head>
+    <body class="code">
+       
+        <div class="dashboard">
+            <center>
+           <h1>Abc hospital management system</h1>
+           {% if session.login==True %}
+           {% include 'nav.html' %}
+           {% endif %}
+        </center>
+        
+        </div>
+        
+        <div class="container">
+            <center>
+            {% include 'message.html' %}
+            </center>
+        {% block body %}{%endblock%}
+    
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+        <script type="text/javascript">
+        CKEDITOR.replace('editor')
+    </script>
+    </body>
+</html>
